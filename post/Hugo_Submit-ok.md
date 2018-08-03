@@ -29,3 +29,5 @@ draft: true
 git add . && git commit -m "update xxx" && git push     #推送远程仓库
 
 ```
+
+3.由于本仓库设计有问题，决定新建一个文件夹进行文件提交，为HugoBlog/BlogSourse_file文件夹
