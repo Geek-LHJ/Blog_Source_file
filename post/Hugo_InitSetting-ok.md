@@ -1,0 +1,59 @@
+---
+title: "搭建MyhugoBlog"
+date: 2018-07-25T10:21:41+08:00
+draft: true
+---
+
+# 搭建MyhugoBlog
+1、搭建本地服务器的Blog
+```
+$ hugo new site hugoBlog    #新建站点hugoBlog
+$ cd hugoBlog   #进入hugoBlog文件夹
+$ hugo new about.md     #创建about.md文件
+$ hugo new post/first.md    #创建first.md文件(post文件夹下）
+$ cd themes     #进行themes文件夹
+$ git clone https://github.com/spf13/hyde.git   #克隆一个主题
+$ cd ..     #回到hugoBlog目录下
+$ hugo server --theme=hyde --buildDrafts    #开启hugo本地服务器
+[http://localhost:1313/]    #本地运行端口
+
+```
+2、搭建一个Github上的访问Blog
+```
+$ hugo --theme=hyde --baseUrl="http://Geek-LHJ.github.io/"  #加入GitHub上主题链接文件
+$ cd public     #进入public目录下
+$ git init   #git仓库初始化
+$ git remote add origin https://github.com/Geek-LHJ/Geek-LHJ.github.io.git      #连接到远程建立的GitHub仓库
+$ git add -A        #添加文件
+$ git commit -m "first commit"      #提交，备注
+$ git push -u origin master     #提交到远程master分支
+[https://geek-lhj.github.io/]   #github访问链接地址
+$ cd ..     #回到hugoBlog目录下
+$ hugo server --theme=hyde --buildDrafts    #开启hugo本地服务器
+[http://localhost:1313/]    #本地运行端口
+```
+3、GitHub建立分支，对网站和内容进行分离
+```
+GitHub网站建立新的branch分支 src 分支
+$ cd ..     #进入hugoBlog文件夹
+$ git init      #git仓库初始化
+$ git remote add origin https://github.com/Geek-LHJ/Geek-LHJ.github.io.git      #连接到远程建立的GitHub仓库
+$ git checkout -b src       #本地新建 src 分支
+$ git add .     #添加文件
+$ git commit -m "update"     #提交文件
+$ git push --set-upstream origin src    #提交到远程src分支
+
+```
+扩展1：利用 gh-pages分支展示自己的项目 ;
+```
+$ npm i -g gh-pages     #下载并全局安装gh-pages
+$ gh-pages -d public -b master      #添加public 文件夹到master 主分支上
+```
+扩展2：忽略src分支与master分支的重复文件夹;
+```
+$ start .       #查看目录文件
+$ echo public > .gitignore      #git忽略特殊文件 gitignore
+$ git add .     #添加文件
+$ git commit -m"u"      #提交文件
+$ git push      #提交
+```
