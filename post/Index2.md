@@ -25,4 +25,6 @@ draft: true
 
 10. [React组件——coding迪斯尼（慕课网）](https://geek-lhj.github.io/post/reactcomponent_imooc-ok/)
 
-11. [React响应用户输入——coding迪斯尼（慕课网）](https://geek-lhj.github.io/post/react_responseuserinput_imooc-ok)
+11. [React响应用户输入——coding迪斯尼（慕课网](https://geek-lhj.github.io/post/react_responseuserinput_imooc-ok)
+
+12. [React.js 小书笔记](https://geek-lhj.github.io/post/react-smallbook-notes)
